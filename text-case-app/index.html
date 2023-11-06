@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text case app by Abhishek Charan</title>
+    <meta name="description" content="Text case app by Abhishek Charan">
+    <meta name="og:description" content="Text case app by Abhishek Charan">
+    <meta name="og:title" content="Text case app by Abhishek Charan">
+
+    <style>
+        .parent
+        {
+            display: flex;
+        }
+        .child
+        {
+            margin: auto;
+            text-align: center;
+        }
+        .theme{
+            background-color: #008080; 
+            color: whitesmoke;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    
+</head>
+<body class="theme">
+   <div class="parent">
+        <div class="child">
+            <h1>Text case change app</h1>
+         <textarea class="inputData" name="textarea" cols="100" rows="10" placeholder="insert your text here"></textarea>
+
+       <div class="parent" style="justify-content: space-between;"> 
+        <div>
+            Convert to 
+            <button class="uppercase"> UPPERCASE</button>
+            <button class="lowercase"> lowercase</button>
+            <button class="capitalize" disabled> Capitalize</button>
+            <button class="sentencecase" disabled> SentenceCase</button>
+        </div>
+            <div>
+                <button onclick="clearField();">Clear</button>
+            </div>
+        
+        
+    </div>
+
+    <h2>Result</h2>
+    <!-- <p id="result"></p> -->
+    <div id="result"></div>
+    </div>
+</div>
+<script>
+     let textarea = document.createElement('textarea');
+     let result = document.querySelector('#result');
+    // textarea.setAttribute('id', 'inputData')
+     textarea.setAttribute('cols', '100')
+     textarea.setAttribute('rows', '10')
+     textarea.setAttribute('readOnly', 'true')
+    // textarea.setAttribute('placeholder', 'insert your text here!')
+     let upperCase = document.querySelector('.uppercase')
+     let lowerCase = document.querySelector('.lowercase')
+     let capitalize = document.querySelector('.capitalize')
+     let sentenceCase = document.querySelector('.sentencecase')
+    // document.getElementById('child').appendChild(textarea [0])
+      let inputData = document.querySelector('.inputData');
+      let resultDiv;
+
+      // function for uppercase
+      upperCase.addEventListener('click',()=>
+    {
+        if(inputData.value ==""){
+            alert('please insert some text')
+            document.querySelector('.inputData').focus()   
+        }
+        else{
+            resultDiv=result.appendChild(textarea)
+            resultDiv.innerHTML=inputData.value.toUpperCase() 
+        }
+        
+    })
+
+// *************************************************************
+
+// function for lowercase
+lowerCase.addEventListener('click',()=>
+    {
+        if(inputData.value ==""){
+            alert('please insert some text')
+            document.querySelector('.inputData').focus()   
+        }
+        else{
+            resultDiv=result.appendChild(textarea)
+            resultDiv.innerHTML=inputData.value.toLowerCase()
+        }
+        
+    })
+
+// *************************************************************
+
+// function for capitalize
+capitalize.addEventListener('click',()=>
+    {   
+     // working on this functionality   
+    })
+// function for SentenceCase
+capitalize.addEventListener('click',()=>
+    {   
+     // working on this functionality   
+    })
+
+
+    function clearField(){
+        inputData.value = "";
+        //alert('hi')
+    }
+
+    // *************************************
+    //remaining points to complete in this
+
+    // responsive
+    // captilize and sentence case
+    //
+        
+    
+</script>
+
+</body>
+</html>
